@@ -1,5 +1,7 @@
 # Cross_platform
 
+```dart
+// Ваш код здесь
 
 import 'package:flutter/material.dart';
 
