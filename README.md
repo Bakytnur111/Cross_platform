@@ -30,42 +30,60 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Daily Planner'),
+        title: const Text(
+          'Daily Planner',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
         backgroundColor: Colors.blueAccent,
+        elevation: 0,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'About the App',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 10),
-            const Text(
+            _buildSectionTitle('About the App'),
+            _buildText(
               'Daily Planner App is a convenient tool that allows users to independently create their daily schedule without strict templates. '
-                  'The application is suitable for those who want to flexibly manage their time and plan tasks at their own discretion.',
-              style: TextStyle(fontSize: 16),
+              'The application is suitable for those who want to flexibly manage their time and plan tasks at their own discretion.',
             ),
             const SizedBox(height: 20),
-            const Text(
-              'Credits',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 10),
-            const Text(
-              'Developed by Nurmakhan Bakytnur, Aziz Abdullin, Madina Rysbekova, Abylaikhan Sekerbek.'
-                  '\n\nMentor (Teacher): Assistant Professor Abzal Kyzyrkanov',
-              style: TextStyle(fontSize: 16),
+            _buildSectionTitle('Credits'),
+            _buildText(
+              'Developed by:
+              \n• Nurmakhan Bakytnur
+              \n• Aziz Abdullin
+              \n• Madina Rysbekova
+              \n• Abylaikhan Sekerbek
+              \n\nMentor (Teacher):
+              \n• Assistant Professor Abzal Kyzyrkanov',
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSectionTitle(String title) {
+    return Text(
+      title,
+      style: const TextStyle(
+        fontSize: 22,
+        fontWeight: FontWeight.bold,
+        color: Colors.blueAccent,
+      ),
+    );
+  }
+
+  Widget _buildText(String text) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 8.0),
+      child: Text(
+        text,
+        style: const TextStyle(
+          fontSize: 16,
+          height: 1.5,
         ),
       ),
     );
