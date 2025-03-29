@@ -1,7 +1,6 @@
 # Cross_platform
 
 ```dart
-// Ваш код здесь
 
 import 'package:flutter/material.dart';
 
@@ -91,3 +90,4 @@ class AboutPage extends StatelessWidget {
     );
   }
 }
+![5413863778086416584](https://github.com/user-attachments/assets/dc3e5720-923a-4fda-a1fe-9c97566c7379)
